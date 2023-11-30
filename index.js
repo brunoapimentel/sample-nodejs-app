@@ -5,4 +5,4 @@ const app = express();
 
 app.get("/", (req, res) => res.send("Hello Dude!"));
 
-app.listen(port, () => console.log(`App started o port ${port}...`));
+app.listen(port, () => console.log(`App started on port ${port}...`));

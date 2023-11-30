@@ -1,12 +1,13 @@
-FROM node:16
+FROM docker.io/node:20
 
+COPY . /src
 WORKDIR /src
 
-COPY . .
+RUN cat /tmp/cachi2.env
 
-RUN npm install --verbose
+RUN . /tmp/cachi2.env && yarn install
 
 EXPOSE 9000
 
-CMD ["node", "index.js"]
+CMD ["yarn", "run", "start"]
 
